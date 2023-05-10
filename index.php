@@ -1,29 +1,6 @@
-
-<!--//$one = (int)$_GET['one'];-->
-<!--////$two = (int)$_GET['two'];-->
-<!--//$operation = $_GET['operation'];-->
-<!--//-->
-<!--//if (!empty($one) and !empty($two)){-->
-<!--//    if ($operation == "+"){-->
-<!--//        echo $one + $two;-->
-<!--//    }-->
-<!--//    elseif ($operation == "-"){-->
-<!--//        echo $one - $two;-->
-<!--//    }-->
-<!--//    elseif ($operation == "*"){-->
-<!--//        echo $one * $two;-->
-<!--//    }-->
-<!--//    elseif ($operation == "/"){-->
-<!--//        echo $one / $two;-->
-<!--//    }-->
-<!--//    elseif ($operation == "**"){-->
-<!--//        echo $one ** $two;-->
-<!--//    }-->
-<!--//}-->
-<!--//else{-->
-<!--//    echo "Данных нет";-->
-<!--//}-->
-
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -37,13 +14,19 @@
 <body>
     <header>
         <div class="container">
-            <a href="#"><img class="logo" src="./assets/imges/logo.png" alt="logo"></a>
+            <a href="#"><img class="logo" src="assets/images/logo.png" alt="logo"></a>
             <form method="get">
                 <input type="text" placeholder="Поиск">
                 <input type="submit" value="Найти">
             </form>
-            <a href="./pages/login.php"><img class="auth" src="./assets/imges/profile.jpg" alt="profile"></a>
+            <a href="./pages/login.php"><img class="auth" src="assets/images/profile.jpg" alt="profile"></a>
         </div>
     </header>
+    <div class="content">
+        <div class="container">
+            <h1><?php echo $_SESSION["message"];?></h1>
+        </div>
+    </div>
 </body>
 </html>
+
