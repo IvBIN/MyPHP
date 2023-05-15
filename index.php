@@ -1,5 +1,9 @@
 <?php
 session_start();
+
+$search = $_GET['search'];
+file_put_contents('./welcome.txt', $search);
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,7 +20,7 @@ session_start();
         <div class="container">
             <a href="#"><img class="logo" src="assets/images/logo.png" alt="logo"></a>
             <form method="get">
-                <input type="text" placeholder="Поиск">
+                <input type="text" placeholder="Поиск" name="search">
                 <input type="submit" value="Найти">
             </form>
             <a href="./pages/login.php"><img class="auth" src="assets/images/profile.jpg" alt="profile"></a>
@@ -25,6 +29,11 @@ session_start();
     <div class="content">
         <div class="container">
             <h1><?php echo $_SESSION["message"];?></h1>
+            <form action="./temp.php" method="get">
+                <input type="text" name="num_1">
+                <input type="text" name="num_2">
+                <input type="submit" value="сложить">
+            </form>
         </div>
     </div>
 </body>
