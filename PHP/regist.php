@@ -14,7 +14,7 @@ else{
     $data_from_file = json_decode($file);
     if (!empty($data_from_file)){
         foreach ($data_from_file as $user){
-            if ($user->user_name == $login){
+            if ($user->user == $login){
                 $_SESSION['erorr'] = "Пользватель существует!";
                 header("Location: ../pages/regist.php");
             }
